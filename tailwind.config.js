@@ -8,9 +8,12 @@ module.exports = {
     extend: {
       colors: {
         'default-background': '#faebd7',
-        'default-font' : "#483d8b"
+        'default-color' : "#483d8b"
       }
     },
+    fontFamily: {
+      'default-font' : ['Courier', 'sans-serif']
+    }
   },
   plugins: [],
 }

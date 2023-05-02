@@ -1,19 +1,17 @@
-import { useState } from "react";
-import "./App.css";
-import HomeContent from "./components/HomeContent";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
-
-function Home() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="Home bg-default-background text-default-font font-default-font flex justify-center items-center flex-col min-h-screen">
-        <NavBar></NavBar>  
-        <HomeContent></HomeContent> 
-        <Footer></Footer>
-    </div>
-  );
+import humanFace from "./assets/human_face.jpg";
+function Home(){
+    return (
+        <div className="main flex flex-col justify-center  grow ">
+        <span className="flex items-center flex-row">
+          <h1 className="relative font-bold text-5xl text-center bg-opacity-30">
+            Hello✌️<br/> from Toby
+          </h1>
+          <picture>
+            <img src={humanFace} className="w-80 rounded-full"></img>
+          </picture>
+        </span>
+      </div>
+    )
 }
 
 export default Home;
