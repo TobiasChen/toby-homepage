@@ -1,7 +1,9 @@
 
 
-export type CircleLineStatus = "done" | "wip" | "notStarted"
-type CircleLineProps = {circleRadius: number, modifier : "middle" | "start" | "end", status: CircleLineStatus}
+export type circleStatus = "done" | "wip" | "notStarted"
+//export type lineStatus = ""
+
+type CircleLineProps = {circleRadius: number, modifier : "middle" | "start" | "end", status: circleStatus}
 import { ReactComponent as Checkmark } from "../assets/mark-check-sharp.svg";
 
 

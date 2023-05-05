@@ -18,7 +18,8 @@ module.exports = {
     extend: {
       colors: {
         'default-background': '#faebd7',
-        'default-color' : "#483d8b"
+        'default-color' : "#483d8b",
+        'default-color-light' : "#968ee0"
       }
     },
     fontFamily: {
