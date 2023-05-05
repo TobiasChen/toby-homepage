@@ -12,6 +12,7 @@ import NotFound from './error/NotFound';
 
 
 import "./index.css";
+import Challenge from './Challenge';
 
 const router = createBrowserRouter([
   {
@@ -20,19 +21,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>
+        element: <Home title='Home'/>
       },
       {
         path: "/about",
-        element: <Home/>
+        element: <Home title='Home'/>
       },
       {
         path: "/contact",
-        element: <Home/>
+        element: <Home title='Home'/>
       },
       {
         path: "/challenge",
-        element: <Home/>
+        element: <Challenge title='Challenge'/>
       },
       {
         path: "*",
