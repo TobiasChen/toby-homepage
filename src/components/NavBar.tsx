@@ -10,7 +10,6 @@ function NavBar(){
             <span><Link to={"/contact"}>Contacts</Link></span>
             <span>|</span>
             <span><Link to={"/challenge"}>Challenge</Link></span>
-            <span>|</span>
         </div>
     </div>
     )
