@@ -6,6 +6,9 @@ import {
 } from "react-router-dom";
 
 import Home from "./Home";
+import About from './About';
+import Contact from './Contact';
+import PrivacyPolicy from './PrivacyPolicy'
 import RootLayout from './RootLayout';
 import NotFound from './error/NotFound';
 
@@ -25,15 +28,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <Home title='Home'/>
+        element: <About title='About'/>
       },
       {
         path: "/contact",
-        element: <Home title='Home'/>
+        element: <Contact title='Contact'/>
       },
       {
         path: "/challenge",
         element: <Challenge title='Challenge'/>
+      },
+      {
+        path: "/privacy",
+        element: <PrivacyPolicy title='Privacy Policy'/>
       },
       {
         path: "*",

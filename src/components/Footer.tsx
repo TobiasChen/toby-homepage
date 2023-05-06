@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import { ReactComponent as GithubSVG } from "../assets/github-mark.svg";
 
 function Footer(){
@@ -11,6 +12,10 @@ function Footer(){
             </a>
             <span className="inline-flex items-center min-h-full">|</span>
             <span>Built 02 May 2023 </span>
+            <span className="inline-flex items-center min-h-full">|</span>
+            <p>Tobias Chen</p>
+            <span className="inline-flex items-center min-h-full">|</span>
+            <p><Link to={"/privacy"}>Privacy policy</Link></p>
         </div>
     </div>
     )

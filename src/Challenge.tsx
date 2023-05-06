@@ -19,7 +19,7 @@ const dummyJson: Array<ChallengeEntryInput> = [
     comment: "I skipped this step, cause paying 100 bucks for a certificate, I wont really need seems uneccessary" },
   { status: "done", title: "HTML", description: "The website should be written in HTML.",
    comment: <p className="italic">- The actual task requires creating the resume as HTML, but I couldnt find a design I liked. <br/>
-  Instead I created this website, my resume can be found <Link to={"/contact"}>here</Link> or at <a href={"https://www.linkedin.com/in/tobias-chen-11b816214/"}>linkedin</a></p> },
+  Instead I created this website, my resume can be found <Link to={"/about"}>here</Link> or at <a href={"https://www.linkedin.com/in/tobias-chen-11b816214/"}>linkedin</a></p> },
   { status: "done", title: "CSS", description: "The website should be styled with CSS", comment: "Done :D" },
   { status: "wip", title: "Static Website", description: "The website should be deployed on Amazon S3.", comment: "" },
   { status: "notStarted", title: "HTTPS", description: "The website should use HTTPS for security.", comment: "" },

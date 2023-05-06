@@ -7,7 +7,7 @@ function NavBar(){
             <span>|</span>
             <span><Link to={"/about"}>About</Link></span>
             <span>|</span>
-            <span><Link to={"/contact"}>Contacts</Link></span>
+            <span><Link to={"/contact"}>Contact</Link></span>
             <span>|</span>
             <span><Link to={"/challenge"}>Challenge</Link></span>
         </div>
