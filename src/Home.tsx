@@ -1,6 +1,5 @@
 import { useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
-import humanFace from "./assets/bonnie.jpg";
 
 function Home(prop: {title: string}){
 
@@ -18,9 +17,10 @@ function Home(prop: {title: string}){
               Hello✌️<br/> from Toby
             </h1>
           </div>
- 
           <picture className="flex w-2/3 items-center flex-auto">
-            <img src={humanFace} className="w-96 rounded-xl "></img>
+            <source type="image/webp" srcSet="src/assets/resized/bonnie-1920.webp 1920w, src/assets/resized/bonnie-1280.webp 1280w, src/assets/resized/bonnie-640.webp 640w, src/assets/resized/bonnie-320.webp 320w"></source>
+            <source type="image/jpg" srcSet="src/assets/resized/bonnie-1920.jpg 1920w, src/assets/resized/bonnie-1280.jpg 1280w, src/assets/resized/bonnie-640.jpg 640w, src/assets/resized/bonnie-320.jpg 320w"></source>
+            <img src="src/assets/bonnie.jpg" loading="lazy" className="w-96 rounded-xl "></img>
           </picture>
         </span>
       </div>
