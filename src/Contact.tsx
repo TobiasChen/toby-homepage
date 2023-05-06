@@ -10,7 +10,7 @@ export default function Contact(prop: { title: string }) {
   return (
     <div className="main flex flex-col justify-center gap-4 grow ">
       <p className=" text-5xl text-center mb-5 font-normal">Shoot me a message</p>
-      <p className=" text-xl text-center">You can find me on <a href={"https://www.linkedin.com/in/tobias-chen-11b816214/"}>linkedin</a></p>
+      <p className=" text-xl text-center">You can find me on <a href={"https://www.linkedin.com/in/tobias-chen-11b816214/"} rel="noopener noreferrer" target="_blank">linkedin</a></p>
       <p className=" text-xl text-center">or pop me an email:</p>
       <p className=" text-xl text-center">tobias[at]chen[.]de</p>
     </div>

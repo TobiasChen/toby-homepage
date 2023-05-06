@@ -19,23 +19,24 @@ const dummyJson: Array<ChallengeEntryInput> = [
     comment: "I skipped this step, cause paying 100 bucks for a certificate, I wont really need seems uneccessary" },
   { status: "done", title: "HTML", description: "The website should be written in HTML.",
    comment: <p className="italic">- The actual task requires creating the resume as HTML, but I couldnt find a design I liked. <br/>
-  Instead I created this website, my resume can be found <Link to={"/about"}>here</Link> or at <a href={"https://www.linkedin.com/in/tobias-chen-11b816214/"}>linkedin</a></p> },
+  Instead I created this website, my resume can be found <Link to={"/about"}>here</Link> or at <a href={"https://www.linkedin.com/in/tobias-chen-11b816214/" } rel="noopener noreferrer" target="_blank">linkedin</a></p> },
   { status: "done", title: "CSS", description: "The website should be styled with CSS", comment: "Done :D" },
-  { status: "wip", title: "Static Website", description: "The website should be deployed on Amazon S3.", comment: "" },
+  { status: "done", title: "Static Website", description: "The website should be deployed on Amazon S3.", comment: "" },
   { status: "notStarted", title: "HTTPS", description: "The website should use HTTPS for security.", comment: "" },
   { status: "wip", title: "DNS", description: "The website should have a proper domain name.", comment: "" },
   { status: "notStarted", title: "JavaScript", description: "The website should include a visitor counter to track and display how many people have accessed the site.", comment: "" },
   { status: "notStarted", title: "Database", description: "The visitor count should be retrieved and saved into a database.", comment: "" },
   {status :"notStarted", title :"API", description: "Hook a API Gateway and Lambda Service between the database and the JS-Code.", comment: ""},
-  { status: "done", title: "Python", description: `The lambda functions should include a bit of python code`, comment: "I decided to solve this in JS instead, because I am more confident in my python skills. For an example of work in python, I solved the last two years of Advent of Code with python here" },
+  { status: "notStarted", title: "Python", description: `The lambda functions should include a bit of python code`, comment: <p className="italic"> - I decided to solve this in JS instead, because I am more confident in my python skills. For an example of work in python, I solved the last two years of Advent of Code with python <a href={"https://github.com/TobiasChen/AdventOfCode" } rel="noopener noreferrer" target="_blank">here</a> </p>},
   { status: "notStarted", title: "Tests", description: "I should include some Tests for this project", comment: "Another reason to use JS, and explore the testing framework XYZ" },
   { status: "notStarted", title: "Infrastructure as Code", description: "The AWS Resources should be defined as templates, either SAM or terraform", comment: "" },
   { status: "done", title: "Source Controle", description: "The backend code should be checked into version controle as well", comment: "I decided to create three distinct repositories. One for the frontend, one for the backend, and one for all the infrastructure stuff." },
-  { status: "notStarted", title: "CI/CD-Backend", description: "The backend should be automatically deployed/updated, whenether a new commit comes in, and the Tests are passing.", comment: "" },
- { status: "notStarted", title: "CI/CD-Frontend", description: "The fronted should be automatically deployed, whenether a new commit comes in.", comment: "Another reason to use JS, and explore the testing framework XYZ" },
-{ status: "notStarted", title: "Blog post", description: "As a final step, a blog should be written about the experience.", comment: "I think my comments are sufficient for this." },
+  { status: "notStarted", title: "CI/CD-Backend", description: "The backend should be automatically deployed/updated, whenether a new commit comes in, and the Tests are passing.", comment: "Another reason to use JS, and explore the testing framework XYZ" },
+  { status: "done", title: "CI/CD-Frontend", description: "The fronted should be automatically deployed, whenether a new commit comes in.", comment: "I solved this pretty early on to not have to bother with manual uploads to S3 anymore. It also allowed me to tinker with the AWS OIDC flow." }, 
+{ status: "notStarted", title: "Blog post", description: "As a final step, a blog should be written about the experience.", comment: "I decided to use the comments on this page for this." },
 ]  ;
 
+const test = "home"
 
 export default function Challenge(prop: {title: string}) {
   const setTitle: (title: string) => void = useOutletContext();
