@@ -14,25 +14,27 @@ export interface ChallengeEntryInput {
 }
 
 const dummyJson: Array<ChallengeEntryInput> = [
-  { status: "notStarted", title: "Certification",
-    description: "The resume should have the AWS Cloud Practioner certification on it",
-    comment: "Skipped cause I dont need no certificate" },
-  { status: "done", title: "HTML", description: "The resume should be written in HTML", comment: <span>My resume can be found at <Link to={"/contact"}>Contacts</Link></span> },
+  { status: "wip", title: "Certification",
+    description: "The resume should have the AWS Cloud Practioner certification on it.",
+    comment: "I skipped this step, cause paying 100 bucks for a certificate, I wont really need seems uneccessary" },
+  { status: "done", title: "HTML", description: "The website should be written in HTML.",
+   comment: <p className="italic">- The actual task requires creating the resume as HTML, but I couldnt find a design I liked. <br/>
+  Instead I created this website, my resume can be found <Link to={"/contact"}>here</Link> or at <a href={"https://www.linkedin.com/in/tobias-chen-11b816214/"}>linkedin</a></p> },
   { status: "done", title: "CSS", description: "The website should be styled with CSS", comment: "Done :D" },
-  { status: "wip", title: "Static Website", description: "The website should be deployed on Amazon S3", comment: "" },
-  { status: "wip", title: "HTTPS", description: "The website should be deployed on Amazon S3", comment: "" },
-  { status: "notStarted", title: "Static Website", description: "The website should be deployed on Amazon S3", comment: "" },
-  { status: "notStarted", title: "HTTPS", description: "The connection to the website should be secured with HTTPS", comment: "" },
-  { status: "notStarted", title: "DNS", description: "The website should get a custom DNS domain", comment: "" },
-  {status :"notStarted", title :"TEST", description:"", comment: ""},
-  { status: "done", title: "Static Website", description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus a est sit amet porttitor. Donec consequat lectus non felis mattis, et tempor risus eleifend. Nullam rutrum elit ac sollicitudin gravida. Phasellus hendrerit pellentesque purus eu suscipit. Duis laoreet sapien in justo gravida, ornare interdum sem lobortis. Aenean vel augue a purus facilisis maximus. Aenean a lorem magna. Nulla facilisi.
-
-  Vestibulum tincidunt dapibus orci tincidunt maximus. Suspendisse convallis commodo quam, sit amet elementum erat dictum et. Phasellus aliquet sagittis odio vitae imperdiet. Integer a elit ex. Maecenas felis enim, sagittis vel rhoncus non, condimentum et orci. Nulla at purus mi. In sed massa sagittis, consectetur nisi ac, lobortis lectus. Phasellus bibendum blandit massa id sodales.
-  
-  Praesent eu ex sed quam ultricies dapibus. Ut eu dapibus quam, ut mattis purus. Vivamus porttitor lobortis justo at pulvinar. Maecenas gravida mauris nec hendrerit condimentum. Phasellus tellus elit, facilisis eget dolor sit amet, suscipit scelerisque enim. Fusce in massa dui. Nam consequat at turpis ac finibus. Duis vitae odio eget ipsum congue condimentum. In gravida pretium nulla, a feugiat tellus fringilla sed. Etiam a tellus lorem. Pellentesque et orci eu neque varius bibendum. Quisque vehicula condimentum tempus. Proin sit amet ante at quam congue dapibus. Nulla aliquet maximus sapien eget iaculis. Pellentesque vel metus augue.`, comment: "" },
-  { status: "notStarted", title: "JavaScript: Visitor Count", description: "The website should have a visitor counter, which needs to be written in JS", comment: "" },
-  { status: "notStarted", title: "Database", description: "The website should connect to a database to store its conntent", comment: "" },
-];
+  { status: "wip", title: "Static Website", description: "The website should be deployed on Amazon S3.", comment: "" },
+  { status: "notStarted", title: "HTTPS", description: "The website should use HTTPS for security.", comment: "" },
+  { status: "wip", title: "DNS", description: "The website should have a proper domain name.", comment: "" },
+  { status: "notStarted", title: "JavaScript", description: "The website should include a visitor counter to track and display how many people have accessed the site.", comment: "" },
+  { status: "notStarted", title: "Database", description: "The visitor count should be retrieved and saved into a database.", comment: "" },
+  {status :"notStarted", title :"API", description: "Hook a API Gateway and Lambda Service between the database and the JS-Code.", comment: ""},
+  { status: "done", title: "Python", description: `The lambda functions should include a bit of python code`, comment: "I decided to solve this in JS instead, because I am more confident in my python skills. For an example of work in python, I solved the last two years of Advent of Code with python here" },
+  { status: "notStarted", title: "Tests", description: "I should include some Tests for this project", comment: "Another reason to use JS, and explore the testing framework XYZ" },
+  { status: "notStarted", title: "Infrastructure as Code", description: "The AWS Resources should be defined as templates, either SAM or terraform", comment: "" },
+  { status: "done", title: "Source Controle", description: "The backend code should be checked into version controle as well", comment: "I decided to create three distinct repositories. One for the frontend, one for the backend, and one for all the infrastructure stuff." },
+  { status: "notStarted", title: "CI/CD-Backend", description: "The backend should be automatically deployed/updated, whenether a new commit comes in, and the Tests are passing.", comment: "" },
+ { status: "notStarted", title: "CI/CD-Frontend", description: "The fronted should be automatically deployed, whenether a new commit comes in.", comment: "Another reason to use JS, and explore the testing framework XYZ" },
+{ status: "notStarted", title: "Blog post", description: "As a final step, a blog should be written about the experience.", comment: "I think my comments are sufficient for this." },
+]  ;
 
 
 export default function Challenge(prop: {title: string}) {
@@ -43,6 +45,14 @@ export default function Challenge(prop: {title: string}) {
 
   return (
     <div className="main flex flex-col justify-center gap-0 grow mt-10 mb-10">
+      <p className=" text-5xl text-center">Cloud resume challenge</p>
+      <div className="flex flex-row gap-0">
+        <div className="flex w-1/10  md:w-1/8 lg:1/6 shrink justify-center items-center"></div>
+        <div className={`flex w-5/6 grow flex-col mt-5 mb-5 mr-10 md:mr-10 lg:mr-0 gap-5`}>
+          <p className="whitespace-pre-line max-w-5xl">This website is my entry to the Cloud Resume Challenge, an initiative created by Forrest Brazeal. The challenge is designed to showcase and train some basics skills with cloud computing and DevOps pratices.
+          I decided to complete the challenge with AWS, and document my progress on this page. The text on this page is adapted from Forrest Brazeal's overview page <a href="https://cloudresumechallenge.dev/docs/the-challenge/aws/" rel="noopener noreferrer" target="_blank">here</a>.</p>
+        </div>
+      </div>
       {dummyJson.map((currentEntry, index) => (
         <ChallengeEntry status={currentEntry.status} key={index} index={index} length={dummyJson.length} description={currentEntry.description} title={currentEntry.title} comment={currentEntry.comment}></ChallengeEntry>
       ))}

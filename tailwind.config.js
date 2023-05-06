@@ -15,16 +15,24 @@ module.exports = {
       'large': '12px',
       'full': '9999px',
     },
+    fontFamily: {
+      'default-font' : ['Courier', 'sans-serif']
+    },
     extend: {
       colors: {
         'default-background': '#faebd7',
         'default-color' : "#483d8b",
         'default-color-light' : "#968ee0"
+      },
+      width:{
+        "1/8": "12.5%",
+        "1/7.5": "13.3%",
+        "1/4.5": "22.2%",
+        "1/10": "10%"
       }
     },
-    fontFamily: {
-      'default-font' : ['Courier', 'sans-serif']
-    }
+
+
   },
   plugins: [],
 }

@@ -16,10 +16,10 @@ export default function ChallengeEntry(entry: ChallengeEntryType){
     }
     return (
     <div className="flex flex-row gap-1">
-        <div className="flex w-1/3 justify-center items-center">
+        <div className="flex w-1/5 md:w-1/4 lg:1/3 shrink justify-center items-center">
             {circleLine}
         </div>
-        <div className={`flex w-2/3 flex-col mt-5 mb-5`}>
+        <div className={`flex w-2/3 grow flex-col mt-5 mb-5 mr-10 md:mr-5 lg:mr-0`}>
             <div className="flex">{typeof entry.title === "string" ? <h1 className="font=bold text-3xl">{entry.title}</h1> : entry.title}</div>
             <div className="flex max-w-3xl">{typeof entry.description === "string" ? <p className=" whitespace-pre-line">{entry.description}</p> : entry.description}</div>
             {/* I only render the line if the comment exists at all, and then check wheter its a string or a react component.
