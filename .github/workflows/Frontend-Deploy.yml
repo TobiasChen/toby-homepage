@@ -1,0 +1,39 @@
+name: Deploy Blog
+
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Caching  Node Modules
+        id: node-cache-build
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}--toby-homepage-site-build-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-toby-homepage-site-build-
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+        
+      - name: Set AWS credentials
+        uses: aws-actions/configure-aws-credentials@2
+        with:
+          role-to-assume: ${{ secrets.DEV_DEPLOY_ROLE }}
+          role-session-name: OIDCSession
+          aws-region: eu-central-1
+          
+      - run: aws s3 cp dist s3://toby-homepage/ --recursive
+        shell: bash
+
