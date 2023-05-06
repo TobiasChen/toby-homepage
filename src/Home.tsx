@@ -14,7 +14,9 @@ function Home(prop: {title: string}){
         <span className="flex items-center flex-row gap-5">
           <div className="flex items-center min-w-fit">         
             <h1 className=" font-bold text-5xl text-center bg-opacity-30 ">
-              Hello✌️<br/> from Toby
+              Greetings✌️<br/> from Bonnie🐱<br/>
+              and welcome to <br/>
+               Toby's page
             </h1>
           </div>
           <picture className="flex w-2/3 items-center flex-auto">
