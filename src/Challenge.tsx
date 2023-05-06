@@ -2,12 +2,12 @@
 import ChallengeEntry from "./components/ChallengeEntry";
 import { useOutletContext, Link } from "react-router-dom";
 import { useEffect } from "react";
-import {CircleLineStatus} from "./components/CircleLine";
+import {circleStatus} from "./components/CircleLine";
 
 
 
 export interface ChallengeEntryInput {
-  status: CircleLineStatus
+  status: circleStatus
   title: string | JSX.Element ;
   description: string | JSX.Element;
   comment: string | JSX.Element;
