@@ -17,10 +17,17 @@ import NotFound from './error/NotFound';
 import "./index.css";
 import Challenge from './Challenge';
 
+async function getVisitorCount(){
+  const res = await fetch("api.tobias-chen.de/visitorCount");
+  const { data }: { data:{id: string, visitorCount: number}} = await res.json();
+  return data.visitorCount
+}
+
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <RootLayout/>,
+    element: <RootLayout visitorCount={ await getVisitorCount()}/>,
     children: [
       {
         path: "/",

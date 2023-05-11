@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 type ContextType = { title: String | "" };
 
-function RootLayout() {
+function RootLayout(prop: {visitorCount: number}) {
   function setTitle2(title: string){
     document.title = `${title} / Toby`
   }
@@ -13,7 +13,7 @@ function RootLayout() {
     <div className="Home bg-default-background text-default-color font-default-font flex justify-center items-center flex-col min-h-screen">
       <NavBar></NavBar>
       <Outlet context={setTitle2}></Outlet>
-      <Footer></Footer>
+      <Footer visitorCount={prop.visitorCount}></Footer>
     </div>
   );
 }

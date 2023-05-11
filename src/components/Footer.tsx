@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { ReactComponent as GithubSVG } from "../assets/github-mark.svg";
 
-function Footer(){
+function Footer(prop: {visitorCount: number}){
     return (
     <div className="flex items-baseline h-8">
         <div className="flex flex-row items-center gap-2">
@@ -14,6 +14,8 @@ function Footer(){
             <span>Built 02 May 2023 </span>
             <span className="inline-flex items-center min-h-full">|</span>
             <p>Tobias Chen</p>
+            <span className="inline-flex items-center min-h-full">|</span>
+            <p>Visitors: ${prop.visitorCount}</p>
             <span className="inline-flex items-center min-h-full">|</span>
             <p><Link to={"/privacy"}>Privacy policy</Link></p>
         </div>
