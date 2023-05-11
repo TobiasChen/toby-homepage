@@ -5,7 +5,19 @@ import { useEffect, useState } from "react";
 
 type ContextType = { title: String | "" };
 
-function RootLayout(prop: {visitorCount: number}) {
+function RootLayout() {
+  const url = "api.tobias-chen.de/visitorCount"
+  const [visitorCount, setVisitorCount] = useState(0)
+  useEffect(()=>{
+    const getVisitorCount = async() => {
+      const res = await fetch(url);
+      const { data }: { data:{id: string, visits: number}} = await res.json();
+      setVisitorCount(data.visits)
+      
+    }
+    getVisitorCount()
+ },[]);
+
   function setTitle2(title: string){
     document.title = `${title} / Toby`
   }
@@ -13,7 +25,7 @@ function RootLayout(prop: {visitorCount: number}) {
     <div className="Home bg-default-background text-default-color font-default-font flex justify-center items-center flex-col min-h-screen">
       <NavBar></NavBar>
       <Outlet context={setTitle2}></Outlet>
-      <Footer visitorCount={prop.visitorCount}></Footer>
+      <Footer visitorCount={visitorCount}></Footer>
     </div>
   );
 }
