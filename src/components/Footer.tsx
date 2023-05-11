@@ -15,7 +15,7 @@ function Footer(prop: {visitorCount: number}){
             <span className="inline-flex items-center min-h-full">|</span>
             <p>Tobias Chen</p>
             <span className="inline-flex items-center min-h-full">|</span>
-            <p>Visitors: ${prop.visitorCount}</p>
+            <p>Visitors: {prop.visitorCount}</p>
             <span className="inline-flex items-center min-h-full">|</span>
             <p><Link to={"/privacy"}>Privacy policy</Link></p>
         </div>

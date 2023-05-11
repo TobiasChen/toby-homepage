@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 type ContextType = { title: String | "" };
 
 function RootLayout() {
-  const url = "api.tobias-chen.de/visitorCount"
+  const url = "https://api.tobias-chen.de/visitorCount"
   const [visitorCount, setVisitorCount] = useState(0)
   useEffect(()=>{
     const getVisitorCount = async() => {
