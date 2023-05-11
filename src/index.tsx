@@ -19,8 +19,8 @@ import Challenge from './Challenge';
 
 async function getVisitorCount(){
   const res = await fetch("api.tobias-chen.de/visitorCount");
-  const { data }: { data:{id: string, visitorCount: number}} = await res.json();
-  return data.visitorCount
+  const { data }: { data:{id: string, visits: number}} = await res.json();
+  return data.visits
 }
 
 
