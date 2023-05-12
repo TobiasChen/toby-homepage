@@ -29,9 +29,9 @@ function Home(prop: {title: string}){
             </h1>
           </div>
           <picture className="flex w-1/2 md:w-2/3 max-w-lg items-center flex-auto">
+            <img src={original} loading="lazy" className="max-w-100 rounded-xl "></img>
             <source type="image/webp" srcSet={`${bonnie1920Webp} 1920w, ${bonnie1280Webp} 1280w, ${bonnie640Webp} 640w, ${bonnie320Webp} 320w`}></source>
             <source type="image/jpg" srcSet={`${bonnie1920Jpeg} 1920w, ${bonnie1280Jpeg} 1280w, ${bonnie640Jpeg} 640w, ${bonnie320Jpeg} 320w`}></source>
-            <img src={original} loading="lazy" className="max-w-100 rounded-xl "></img>
           </picture>
         </span>
       </div>

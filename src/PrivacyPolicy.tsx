@@ -58,7 +58,7 @@ export default function About(prop: { title: string }) {
       <br />
       Germany{" "}
       <p>
-       E-Mail: [E-Mail]{" "}
+       E-Mail: gdpr@tobias-chen.de{" "}
       </p>
       <h3 className=" text-3xl" id="2_theRights">II. The rights of users and data subjects</h3>{" "}
       <p>
