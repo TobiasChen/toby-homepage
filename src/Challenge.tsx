@@ -13,7 +13,7 @@ export interface ChallengeEntryInput {
   comment: string | JSX.Element;
 }
 
-const dummyJson: Array<ChallengeEntryInput> = [
+const content: Array<ChallengeEntryInput> = [
   { status: "wip", title: "Certification",
     description: "The resume should have the AWS Cloud Practioner certification on it.",
     comment: "I skipped this step, cause paying 100 bucks for a certificate, I wont really need seemed uneccessary" },
@@ -30,12 +30,15 @@ const dummyJson: Array<ChallengeEntryInput> = [
   {status :"done", title :"API", description: "An API Gateway and a Lambda function should serve as an API into the the database", comment: <p className="italic">- I configured and setup the Gateway and Lambda function, and saved the lambda function code 
   <a href={"https://github.com/TobiasChen/toby-homepage-backend" } rel="noopener noreferrer" target="_blank">here</a></p> },
   { status: "done", title: "Python", description: `The lambda functions should include a bit of python code`, comment: <p className="italic"> - I decided to solve this in JS instead, because I am more confident in my python skills. For an example of work in python, I solved the last two years of Advent of Code with python <a href={"https://github.com/TobiasChen/AdventOfCode" } rel="noopener noreferrer" target="_blank">here</a> </p>},
-  { status: "notStarted", title: "Tests", description: "The backend JS code should be tested", comment: "Another reason to use JS, and explore the testing framework XYZ" },
-  { status: "notStarted", title: "Infrastructure as Code", description: "The AWS Resources should be defined as templates, either SAM or terraform", comment: "" },
+  { status: "wip", title: "Tests", description: "The backend JS code should be tested", comment: "Another reason to use JS, and explore the testing framework XYZ" },
+  { status: "done", title: "Infrastructure as Code", description: "The AWS Resources should be defined as templates, either SAM or terraform", comment: "I choose to go with terraform and then spent about three days working through all the permissions and details." +
+  "It works now, but could use some more tweaking, to remove too lax permissions, and only allow access to the bucket from cloudefront." },
   { status: "done", title: "Source Controle", description: "The backend code should be checked into version controle as well", comment: "I decided to create three distinct repositories. One for the frontend, one for the backend, and one for all the infrastructure stuff." },
-  { status: "notStarted", title: "CI/CD-Backend", description: "The backend should be automatically deployed/updated, whenether a new commit comes in, and the Tests are passing.", comment: "Another reason to use JS, and explore the testing framework XYZ" },
+  { status: "wip", title: "CI/CD-Backend", description: "The backend should be automatically deployed/updated, whenether a new commit comes in, and the Tests are passing.", comment: "Another reason to use JS, and explore the testing framework XYZ" },
   { status: "done", title: "CI/CD-Frontend", description: "The fronted should be automatically deployed, whenether a new commit comes in.", comment: "I solved this pretty early on to not have to bother with manual uploads to S3 anymore. It also allowed me to tinker with the AWS OIDC flow." }, 
-{ status: "notStarted", title: "Blog post", description: "As a final step, a blog should be written about the experience.", comment: "I decided to use the comments on this page for this." },
+{ status: "notStarted", title: "Blog post", description: "As a final step, a blog should be written about the experience.", comment: "I decided to use the comments on this page: \n" +
+  " Overall it was a pretty fun project, first building the website, then putting it onto AWS and figuring out terraform. \n However I was reasonably certain from the start, that AWS was not going to be the place I would want to put my website longterm, and the DNS issues were kinda the final nail in the coffin.\n" +
+" I chose XYZ as a webhost to get an IP I could point an A Record to. This also allowed me to do the cert generation on the machine, instead of the kinda cheaty way I did it for this project, where I just generated a cert locally. This allowed me to dodge the EC2/Lambda fees." },
 ]  ;
 
 const test = "home"
@@ -56,8 +59,8 @@ export default function Challenge(prop: {title: string}) {
           I decided to complete the challenge with AWS, and document my progress on this page. The text on this page is adapted from Forrest Brazeal's overview page <a href="https://cloudresumechallenge.dev/docs/the-challenge/aws/" rel="noopener noreferrer" target="_blank">here</a>.</p>
         </div>
       </div>
-      {dummyJson.map((currentEntry, index) => (
-        <ChallengeEntry status={currentEntry.status} key={index} index={index} length={dummyJson.length} description={currentEntry.description} title={currentEntry.title} comment={currentEntry.comment}></ChallengeEntry>
+      {content.map((currentEntry, index) => (
+        <ChallengeEntry status={currentEntry.status} key={index} index={index} length={content.length} description={currentEntry.description} title={currentEntry.title} comment={currentEntry.comment}></ChallengeEntry>
       ))}
     </div>
   );

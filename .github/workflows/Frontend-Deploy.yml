@@ -1,4 +1,4 @@
-name: Deploy  Frontend
+name: Deploy Frontend
 
 permissions:
   id-token: write
@@ -41,6 +41,6 @@ jobs:
       - run: aws s3 cp dist s3://toby-default-homepage-bucket/ --recursive
         shell: bash
 
-      - run: aws cloudfront create-invalidation --distribution-id E39KADQDV4K5BD --paths /index.html /dist/*
+      - run: aws cloudfront create-invalidation --distribution-id E9A704PV7BYGZ --paths /index.html /dist/*
         shell: bash
 

@@ -1,6 +1,4 @@
 import { ChallengeEntryInput} from "../Challenge";
-import { ReactComponent as Checkmark } from "../assets/mark-check.svg";
-import { ReactComponent as Xmark } from "../assets/mark-x.svg";
 import CircleLine from "./CircleLine";
 
 type ChallengeEntryType = ChallengeEntryInput & {index: number, length: number}
