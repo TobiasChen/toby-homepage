@@ -11,9 +11,11 @@ function RootLayout() {
   useEffect(()=>{
     const getVisitorCount = async() => {
       const res = await fetch(url);
-      const { data }: { data:{id: string, visits: number}} = await res.json();
+      console.log(res)
+      console.log(await res.json())
+      const data : {Attributes :{id: string, visits: number}} = await res.json();
       console.log(data)
-      setVisitorCount(data.visits)
+      setVisitorCount(data.Attributes.visits)
       
     }
     getVisitorCount()
