@@ -10,14 +10,22 @@ function RootLayout() {
   const [visitorCount, setVisitorCount] = useState(0)
   useEffect(()=>{
     const getVisitorCount = async() => {
-      const res = await fetch(url);
-      console.log(res)
-      console.log(await res.json())
-      const data : {Attributes :{id: string, visits: number}} = await res.json();
-      console.log(data)
-      setVisitorCount(data.Attributes.visits)
-      
+      fetch(url).then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(response.status + ": " + response.statusText + " | Error thrown by call with body: " + response.body);
+      })
+      .then((responseJson) => {
+        console.log("Response: ", responseJson)
+        setVisitorCount(responseJson.Attributes.visits)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
     }
+
+    
     getVisitorCount()
  },[]);
 
