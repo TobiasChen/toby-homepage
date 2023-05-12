@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 
 const api_url = "https://api.tobias-chen.de/visitorCount"
 const getVisitorCount = async(setVisitorCount: CallableFunction) => {
-  console.log("Get Visitor Count called")
   fetch(api_url).then((response) => {
     if (response.ok) {
       return response.json();
@@ -14,7 +13,6 @@ const getVisitorCount = async(setVisitorCount: CallableFunction) => {
     throw new Error(response.status + ": " + response.statusText + " | Error thrown by call with body: " + response.body);
   })
   .then((responseJson) => {
-    console.log("Response: ", responseJson)
     setVisitorCount(responseJson.Attributes.visits)
   })
   .catch((error) => {
