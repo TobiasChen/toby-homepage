@@ -28,7 +28,6 @@ type ContextType = { title: String | "" };
 function RootLayout() {
   const [visitorCount, setVisitorCount] = useState(0)
   useEffect(()=>{
-    console.log("Use Effect called")
     getVisitorCount(setVisitorCount)
  },[]);
 
