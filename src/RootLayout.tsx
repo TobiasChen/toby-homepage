@@ -3,30 +3,35 @@ import Footer from "./components/Footer";
 import { Outlet, useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
+const api_url = "https://api.tobias-chen.de/visitorCount"
+const getVisitorCount = async(setVisitorCount: CallableFunction) => {
+  console.log("Get Visitor Count called")
+  fetch(api_url).then((response) => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error(response.status + ": " + response.statusText + " | Error thrown by call with body: " + response.body);
+  })
+  .then((responseJson) => {
+    console.log("Response: ", responseJson)
+    setVisitorCount(responseJson.Attributes.visits)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+}
+
+
+
+
 type ContextType = { title: String | "" };
 
 function RootLayout() {
-  const url = "https://api.tobias-chen.de/visitorCount"
   const [visitorCount, setVisitorCount] = useState(0)
   useEffect(()=>{
-    const getVisitorCount = async() => {
-      fetch(url).then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error(response.status + ": " + response.statusText + " | Error thrown by call with body: " + response.body);
-      })
-      .then((responseJson) => {
-        console.log("Response: ", responseJson)
-        setVisitorCount(responseJson.Attributes.visits)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-    }
-
-    
-    getVisitorCount()
+    console.log("Use Effect called")
+    getVisitorCount(setVisitorCount)
  },[]);
 
   function setTitle2(title: string){
