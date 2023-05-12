@@ -19,8 +19,8 @@ function Home(prop: {title: string}){
 
 
     return (
-        <div className="main flex flex-col justify-center  grow ">
-        <span className="flex items-center flex-row gap-5">
+        <div className="main flex flex-col justify-center grow ">
+        <span className="flex items-center flex-col md:flex-row gap-5 ml-5 mr-5">
           <div className="flex items-center min-w-fit">         
             <h1 className=" font-bold text-5xl text-center bg-opacity-30 ">
               Greetings✌️<br/> from Bonnie🐱<br/>
@@ -28,10 +28,10 @@ function Home(prop: {title: string}){
                Toby's page
             </h1>
           </div>
-          <picture className="flex w-2/3 items-center flex-auto">
+          <picture className="flex w-1/2 md:w-2/3 max-w-lg items-center flex-auto">
             <source type="image/webp" srcSet={`${bonnie1920Webp} 1920w, ${bonnie1280Webp} 1280w, ${bonnie640Webp} 640w, ${bonnie320Webp} 320w`}></source>
             <source type="image/jpg" srcSet={`${bonnie1920Jpeg} 1920w, ${bonnie1280Jpeg} 1280w, ${bonnie640Jpeg} 640w, ${bonnie320Jpeg} 320w`}></source>
-            <img src={original} loading="lazy" className="w-96 rounded-xl "></img>
+            <img src={original} loading="lazy" className="max-w-100 rounded-xl "></img>
           </picture>
         </span>
       </div>
@@ -39,3 +39,4 @@ function Home(prop: {title: string}){
 }
 
 export default Home;
+//w-96 md:w-56 lg:

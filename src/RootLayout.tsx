@@ -38,7 +38,7 @@ function RootLayout() {
     document.title = `${title} / Toby`
   }
   return (
-    <div className="Home bg-default-background text-default-color font-default-font flex justify-center items-center flex-col min-h-screen">
+    <div className="RootLayout bg-default-background text-default-color font-default-font flex justify-center items-center flex-col min-h-screen">
       <NavBar></NavBar>
       <Outlet context={setTitle2}></Outlet>
       <Footer visitorCount={visitorCount}></Footer>
