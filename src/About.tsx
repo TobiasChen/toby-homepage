@@ -16,15 +16,15 @@ export default function About(prop: { title: string }) {
       <p className=" text-xl text-center">Im currently a</p>
       <div className="text-center">    
         <ul className="text-xl text-left inline-block list-disc">
-          <li>DevOps Engineer @ <a href="www.datatactics.de" rel="noopener noreferrer" target="_blank">Datatactics</a></li>
+          <li>DevOps Engineer @ <a href="https://www.datatactics.de" rel="noopener noreferrer" target="_blank">Datatactics</a></li>
         </ul>
       </div>
       <p className=" text-xl text-center">I've previously been:</p>
       <div className="text-center">    
         <ul className="text-xl text-left inline-block list-disc">
-            <li>Fullstack Developer @ <a href="www.seitenbau.com" rel="noopener noreferrer" target="_blank">Seitenbau</a></li>
-            <li>Junior DevOps Engineer @ <a href="www.valtech-mobility.de" rel="noopener noreferrer" target="_blank">Valtech Mobility</a></li>
-            <li>Junior Software Developer @ <a href="www.ida-sds.com" rel="noopener noreferrer" target="_blank">Intelligent Data Analytics</a></li>
+            <li>Fullstack Developer @ <a href="https://www.seitenbau.com" rel="noopener noreferrer" target="_blank">Seitenbau</a></li>
+            <li>Junior DevOps Engineer @ <a href="https://www.valtech-mobility.de" rel="noopener noreferrer" target="_blank">Valtech Mobility</a></li>
+            <li>Junior Software Developer @ <a href="https://www.ida-sds.com" rel="noopener noreferrer" target="_blank">Intelligent Data Analytics</a></li>
         </ul>
       </div>
     </div>
