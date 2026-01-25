@@ -30,17 +30,20 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-        
-      - name: Set AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          role-to-assume: ${{ secrets.DEV_DEPLOY_ROLE }}
-          role-session-name: OIDCSession
-          aws-region: eu-central-1
-          
-      - run: aws s3 cp dist s3://toby-default-homepage-bucket/ --recursive
+
+      # - name: Set AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v2
+      #   with:
+      #     role-to-assume: ${{ secrets.DEV_DEPLOY_ROLE }}
+      #     role-session-name: OIDCSession
+      #     aws-region: eu-central-1
+
+      - run: aws s3 --endpoint-url ${{ secrets.GARAGE_API_URL }} sync ./dist/ s3://${{ secrets.GARAGE_BUCKET_NAME }}/ --delete
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.GARAGE_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.GARAGE_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: garage
         shell: bash
 
-      - run: aws cloudfront create-invalidation --distribution-id E9A704PV7BYGZ --paths /index.html /dist/*
-        shell: bash
-
+      # - run: aws cloudfront create-invalidation --distribution-id E9A704PV7BYGZ --paths /index.html /dist/*
+      #   shell: bash
