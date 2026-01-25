@@ -11,10 +11,11 @@ export default function About(prop: { title: string }) {
     <div className="main flex flex-col justify-center gap-4 grow max-w-5xl ml-12 mr-12">
       <p className=" text-5xl text-center mb-5 font-normal">About me</p>
       <p className=" text-xl text-center mb-10">
-        My name's Tobias Chen, more commonly known as Toby. I am a full-stack
-        developer with a Bsc. in computer science, experienced in a wide range
-        of areas including both back- and frontend. I have a strong passion for
-        development, developer operations, and cloud technologies.
+        I am Tobias Chen or Toby, a full-stack developer specializing in
+        end-to-end application development. With a BSc in Computer Science and
+        expertise across frontend, backend, DevOps, and cloud technologies, I
+        build solutions that work seamlessly from user interface to
+        infrastructure.
       </p>
       <p className=" text-xl text-center mb-10">
         If your interested in working with me, head over to my{" "}
