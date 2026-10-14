@@ -25,7 +25,7 @@ export default function About(prop: { title: string }) {
       <div className="text-center">
         <ul className="text-xl text-left inline-block list-disc">
           <li>
-            Fullstack Developer @{" "}
+            Senior Product Owner @{" "}
             <a
               href="https://www.bvv.de/"
               rel="noopener noreferrer"
@@ -39,6 +39,16 @@ export default function About(prop: { title: string }) {
       <p className=" text-xl text-center">I've previously been:</p>
       <div className="text-center">
         <ul className="text-xl text-left inline-block list-disc">
+          <li>
+            Fullstack Developer @{" "}
+            <a
+              href="https://www.bvv.de/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BVV Pension Management GmbH
+            </a>
+          </li>
           <li>
             DevOps Engineer @{" "}
             <a
